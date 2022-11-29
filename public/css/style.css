@@ -1,0 +1,136 @@
+header {
+    color: white;
+    background-color: rgb(43, 12, 12);
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    padding: 20px 30px;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+h1 span {
+    color: black;
+    background-color: white;
+    margin-left: 70px;
+    padding: 0px 10px 1px 10px;
+    position: relative;
+    bottom: 20px;
+    border-radius: 5px;
+}
+
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+.centerCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.blogCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    color: white;
+    background-color: rgb(43, 12, 12);
+    padding: 0px 15px;
+}
+
+.cardQuestion {
+    font-weight: bold;
+}
+
+.cardAnswer {
+    width: 90%;
+    padding: 13px;
+    border: 2px solid rgb(43, 12, 12);
+}
+
+.log {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 13px;
+    border: 2px solid rgb(43, 12, 12);
+}
+
+.loginInput {
+    font-size: 17px;
+}
+
+.userInput {
+    border: none;
+    padding: 10px 250px 10px 12px;
+    margin-bottom: 10px;
+}
+
+#loginButton {
+    color: white;
+    background-color: grey;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 250px 10px 12px;
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.logInstead {
+    color: blue;
+    font-size: 17px;
+}
+
+.newPost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#newPost {
+    color: white;
+    background-color: rgb(43, 12, 12);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.commentInput {
+    border: 3px solid rgb(126, 204, 231);
+    padding: 10px 250px 50px 12px;
+    margin-bottom: 10px;
+}
+
+.titleInput {
+    border: 3px solid rgb(126, 204, 231);
+    padding: 10px 250px 10px 12px;
+    margin-bottom: 10px;
+}
+
+.dashBlogCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    color: white;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 0px 15px;
+}
