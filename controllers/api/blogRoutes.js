@@ -1,55 +1,82 @@
 const router = require("express").Router();
-const { Blogs, Comments, User } = require("../../models/");
-const withAuth = require("../../utils/auth");
+const { User } = require("../../models");
 
-router.post("/", withAuth, (req, res) => {
-  const body = req.body;
-  console.log(req.session.userId);
-  Blogs.create({ ...body, userId: req.session.userId })
-    .then(newBlog => {
-      res.json(newBlog);
-    })
-    .catch(err => {
-      res.status(500).json(err);
+router.post("/", (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password
+  })
+  .then(userData => {
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
+
+      res.json(userData);
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
-router.put("/:id", withAuth, (req, res) => {
-  console.log(req.body, req.params.id)
-  Blogs.update(req.body, {
+router.post("/login", (req, res) => {
+  User.findOne({
+    where: {
+      username: req.body.username
+    }
+  }).then(userData => {
+    if (!userData) {
+      res.status(400).json({ message: 'Invalid Account' });
+      return;
+    }
+
+    const validPassword = userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: 'Invalid password' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
+  
+      res.json({ user: userData, message: 'Logged In!' });
+    });
+  });
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+});
+
+router.delete("/user/:id", (req, res) => {
+  User.destroy({
     where: {
       id: req.params.id
     }
   })
-    .then(addedBlog => {
-      if (addedBlog > 0) {
-        res.status(200).end();
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
-
-router.delete("/:id", withAuth, (req, res) => {
-  console.log(req.body, req.params.id)
-  Blogs.destroy({
-    where: {
-      id: req.params.id
+  .then(userData => {
+    if (!userData) {
+      res.status(404).json({ message: 'Invalid Id' });
+      return;
     }
+    res.json(userData);
   })
-    .then(deletedBlog => {
-      if (deletedBlog > 0) {
-        res.status(200).end();
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;
