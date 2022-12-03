@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { Blogs, Comments, User } = require("../models");
 
-// get all posts for homepage
 router.get("/", (req, res) => {
     Blogs.findAll({
     include: [User],
@@ -16,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// get single post
+
 router.get("/blog/:id", (req, res) => {
   Blogs.findByPk(req.params.id, {
     include: [

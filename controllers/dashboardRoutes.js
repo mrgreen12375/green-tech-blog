@@ -5,11 +5,11 @@ const withAuth = require("../utils/auth");
 router.get("/", withAuth, (req, res) => {
     Blogs.findAll({
       where: {
-        userId: req.session.userId
+        user_id: req.session.user_id
       }
     })
       .then(blogData => {
-        const posts = blogData.map((post) => post.get({ plain: true }));
+        const posts = blogData.map((blogs) => blogs.get({ plain: true }));
         
         res.render("post", {
           layout: "dashboard",
