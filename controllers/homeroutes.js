@@ -41,7 +41,7 @@ router.get("/blog/:id", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.In) {
     res.redirect("/");
     return;
   }
