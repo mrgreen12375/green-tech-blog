@@ -34,7 +34,7 @@ router.get("/", withAuth, (req, res) => {
         if (blogData) {
           const post = blogData.get({ plain: true });
           
-          res.render("editPost", {
+          res.render("editpost", {
             layout: "dashboard",
             post
           });

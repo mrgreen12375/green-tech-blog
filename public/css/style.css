@@ -81,7 +81,7 @@ body {
     margin-bottom: 10px;
 }
 
-#loginButton {
+.loginButton {
     color: white;
     background-color: grey;
     border: none;
