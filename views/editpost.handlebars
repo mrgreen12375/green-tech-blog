@@ -2,7 +2,8 @@
     <div class="blogCard">
         <p class="cardQuestion">Edit Post</p>
     </div>
-    <form class="log">
+    <form class="log" id="edit-form">
+        <input type="hidden" id="blog-id" value="{{blog.id}}" />
         <label class="loginInput">Title</label>
         <input class="titleInput" type="text" name="passwordField" id="title">
         <label class="loginInput">Content</label>
