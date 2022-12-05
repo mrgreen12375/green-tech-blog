@@ -5,9 +5,9 @@
     <form class="log" id="edit-form">
         <input type="hidden" id="blog-id" value="{{blog.id}}" />
         <label class="loginInput">Title</label>
-        <input class="titleInput" type="text" name="passwordField" id="title">
+        <input class="titleInput" type="text" value="{{blog.title}}" id="title">
         <label class="loginInput">Content</label>
-        <input class="commentInput" type="password" name="passwordField" id="content">
+        <textarea class="commentInput" id="content">{{blog.body}}</textarea>
         <button class="loginButton" type="submit" id="updateButton">Update</button>
         <button class="loginButton" type="submit" id="deleteButton">Delete</button>
     </form>

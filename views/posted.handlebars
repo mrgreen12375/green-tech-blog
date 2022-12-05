@@ -1,7 +1,9 @@
 <div class="centerCards">
+    {{#each posts}}
     <div class="blogCard">
-       <a href="/blog/1"><p class="cardQuestion">Why MVC is so important</p></a> 
-        <p>Posted by Steven on 5/8/2020</p>
+       <a href="/blog/{{id}}"><p class="cardQuestion">{{title}}</p></a> 
+        <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
     </div>
-    <div class="cardAnswer">MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and theController layer for application logic.</div>
+    <div class="cardAnswer">{{body}}</div>
+    {{/each}}
 </div>

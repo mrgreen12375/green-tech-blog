@@ -1,22 +1,27 @@
 <div class="centerCards">
     <div class="blogCard">
-        <p class="cardQuestion">Why MVC is so important</p>
-        <p>Posted by Steven on 5/8/2020</p>
+    <a href="/blog/{{id}}"><p class="cardQuestion">{{post.title}}</p></a> 
+        <p>Posted by {{post.user.username}} on {{format_date post.createdAt}}</p>
     </div>
-    <div class="cardAnswer">MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and theController layer for application logic.</div>
-</div>
-<div class="centerCards">
+    <div class="cardAnswer">{{post.body}}</div>
+
+    {{#if post.Comments}}
     <div class="blogCard"><p class="cardQuestion"></p></div>
     <div class="log">
-        <p>I just learned about this in my class!</p>
-        <p>-Steven, 5/8/2020</p>
+        {{#each post.Comments}}
+        <p>{{body}}</p>
+        <p> &mdash; {{user.username}}, {{format_date createdAt}}</p>
+        {{/each}}
     </div>
-</div>
-<div class="centerCards">
-    <div class="blogCard"><p class="cardQuestion"></p></div>
-    <form class="log" id="comment-form">
-        <label class="loginInput">Comment</label>
-        <input class="commentInput" type="text" name="passwordField" id="comment">
-        <button class="loginButton" type="submit" id="commentButton">Submit</button>
-    </form>
+    {{/if}} 
+
+    <div class="centerCards">
+        <div class="blogCard"><p class="cardQuestion"></p></div>
+        <form class="log" id="comment-form">
+            <input type="hidden" name="blog-id" value="{{blog.id}}" />
+            <label class="loginInput">Comment</label>
+            <input class="commentInput" type="text" name="passwordField" id="comment">
+            <button class="loginButton" type="submit" id="commentButton">Submit</button>
+        </form>
+    </div>
 </div>

@@ -1,6 +1,8 @@
 <div class="centerCards">
+    {{#each posts}}
     <div class="dashBlogCard">
-        <a href="/dashboard/edit/1"><p class="cardQuestion">Object-Relational Mapping</p></a>
-        <p>5/8/2020</p>
+        <a href="/dashboard/edit/{{id}}"><p class="cardQuestion">{{title}}</p></a>
+        <p>{{format_date createdAt}}</p>
     </div>
+    {{/each}}
 </div>
