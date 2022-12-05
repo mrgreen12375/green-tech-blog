@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const { Blogs, Comments, User } = require("../models");
+const { Blog, Comment, User } = require("../models");
 
 router.get("/", (req, res) => {
-    Blogs.findAll({
+    Blog.findAll({
     include: [User],
   })
     .then((blogData) => {
@@ -17,11 +17,11 @@ router.get("/", (req, res) => {
 
 
 router.get("/blog/:id", (req, res) => {
-  Blogs.findByPk(req.params.id, {
+  Blog.findByPk(req.params.id, {
     include: [
       User,
       {
-        model: Comments,
+        model: Comment,
         include: [User],
       },
     ],
@@ -50,7 +50,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect("/");
     return;
   }

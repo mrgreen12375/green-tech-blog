@@ -1,5 +1,5 @@
 
-const commentFormHandler = async function(event) {
+const commentFormHandler = async (event) => {
     event.preventDefault();
   
     const blogId = document.querySelector('input[name="blogs-id"]').value;

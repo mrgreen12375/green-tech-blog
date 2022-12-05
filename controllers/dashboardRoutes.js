@@ -1,15 +1,15 @@
 const router = require("express").Router();
-const { Blogs } = require("../models");
+const { Blog } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
-    Blogs.findAll({
+    Blog.findAll({
       where: {
         user_id: req.session.user_id
       }
     })
       .then(blogData => {
-        const posts = blogData.map((blogs) => blogs.get({ plain: true }));
+        const posts = blogData.map((blog) => blog.get({ plain: true }));
         
         res.render("post", {
           layout: "dashboard",
@@ -29,7 +29,7 @@ router.get("/", withAuth, (req, res) => {
   });
   
   router.get("/edit/:id", withAuth, (req, res) => {
-    Blogs.findByPk(req.params.id)
+    Blog.findByPk(req.params.id)
       .then(blogData => {
         if (blogData) {
           const post = blogData.get({ plain: true });
