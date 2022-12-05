@@ -6,7 +6,7 @@ const editFormHandler = async (event) => {
     const content = document.getElementById('content');
     const blogId = document.getElementById('blog-id')
 
-    fetch("/api/post/" + blogId.value, {
+    fetch("/api/blogs/" + blogId.value, {
         method: "put", 
         body: JSON.stringify({
             title: title.value,

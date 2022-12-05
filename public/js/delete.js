@@ -2,7 +2,7 @@ const deleteBlogHandler = async (event) => {
     event.preventDefault();
     const blogId = document.getElementById('blog-id')
 
-    fetch("/api/post/" + blogId.value, {
+    fetch("/api/blogs/" + blogId.value, {
         method: "delete"
     })
     .then(function() {
