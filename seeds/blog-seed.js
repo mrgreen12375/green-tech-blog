@@ -1,5 +1,5 @@
 //setup the seed object for the blogs
-const { Blogs } = require('../models');
+const { Blog } = require('../models');
 
 const blogData = [
   {
@@ -9,6 +9,6 @@ const blogData = [
 }
 ];
 
-const seedBlog = () => Blogs.bulkCreate(blogData);
+const seedBlog = () => Blog.bulkCreate(blogData);
 
 module.exports = seedBlog;
