@@ -2,7 +2,7 @@ const { User } = require('../models');
 
 const userData = [
     {
-        username: 'Steven',
+        username: 'Dave',
         password: 'password12345'
     }
 ];

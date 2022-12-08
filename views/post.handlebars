@@ -1,8 +1,8 @@
+{{#each posts}}
 <div class="centerCards">
-    {{#each posts}}
     <div class="dashBlogCard">
         <a href="/dashboard/edit/{{id}}"><p class="cardQuestion">{{title}}</p></a>
         <p>{{format_date createdAt}}</p>
     </div>
-    {{/each}}
 </div>
+{{/each}}

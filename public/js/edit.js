@@ -2,15 +2,15 @@ const editFormHandler = async (event) => {
     event.preventDefault();
 
     
-    const title = document.getElementById('title');
-    const content = document.getElementById('content');
-    const blogId = document.getElementById('blog-id')
+    const title = document.getElementById('editTitle').value;
+    const content = document.getElementById('editContent').value;
+    const blogId = document.getElementById('blogId').value;
 
-    fetch("/api/blogs/" + blogId.value, {
-        method: "put", 
+    fetch("/api/blog/" + blogId, {
+        method: "PUT", 
         body: JSON.stringify({
-            title: title.value,
-            content: content.value
+            title: title,
+            content: content
         }),
         headers: { "Content-Type": "application/json"}
     })
