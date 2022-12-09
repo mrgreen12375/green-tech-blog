@@ -3,7 +3,7 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
   
     const blogId = document.querySelector('#blogId').value;
-    const comment = document.querySelector('#comment"]').value;
+    const comment = document.querySelector('#comment').value;
   
     if (comment) {
       await fetch('/api/comment', {
@@ -20,7 +20,7 @@ const commentFormHandler = async (event) => {
       document.location.reload();
     }
   };
-  console.log(comment);
+
   document
     .querySelector('#comment-form')
     .addEventListener('submit', commentFormHandler);
