@@ -1,7 +1,7 @@
 # green-tech-blog
 
 ## Description
-This project is to create a tech blog where you can 
+This project is to create a tech blog where a user can sign-up or login to a personal profile. After the user is logged in they can create a post to the main tech blog thread. In the profile the user can also edit there posts or delete there posts. On the main thread the user can can click on other peoples blogs and leave comments. 
 ## Table of contents
 - [Mock-up](#Mock-up)
 - [Installation](#Installation)
