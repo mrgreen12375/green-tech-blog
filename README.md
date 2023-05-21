@@ -21,7 +21,9 @@ mysql2
 
 sequelize
 ## Usage
-source schema.sql
+mysql -u root -p
+
+source db/schema.sql
 
 npm run seed
 
