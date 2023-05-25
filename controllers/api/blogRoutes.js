@@ -3,9 +3,8 @@ const { Blog, Comment, User } = require("../../models/");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, (req, res) => {
-  const body = req.body;
-  console.log(req.session.user_id);
-  Blog.create({ ...body, user_id: req.session.user_id })
+
+  Blog.create({ ...req.body, user_id: req.session.user_id })
     .then(createBlog => {
       res.json(createBlog);
     })
@@ -15,7 +14,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 router.put("/:id", withAuth, (req, res) => {
-  console.log(req.body, req.params.id)
+
   Blog.update(req.body, {
     where: {
       id: req.params.id
@@ -34,7 +33,7 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console.log(req.body, req.params.id)
+
   Blog.destroy({
     where: {
       id: req.params.id
