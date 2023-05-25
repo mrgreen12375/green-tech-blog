@@ -6,11 +6,11 @@
     <div class="cardAnswer">{{post.content}}</div>
 </div>
 
-{{#if post.comment}}
+{{#if post.comments}}
 <div class="centerCards">
     <div class="blogCard"><p class="cardQuestion"></p></div>
     <div class="log">
-        {{#each post.comment}}
+        {{#each post.comments}}
         <p>{{comment}}</p>
         <p> &mdash; {{user.username}}, {{format_date createdAt}}</p>
         {{/each}}
