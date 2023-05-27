@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
 header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: cinzel;
     color: white;
-    background-color: rgb(43, 12, 12);
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    height: 125px;
 }
 
 ul {
     display: flex;
     list-style-type: none;
+    font-size: 20px;
 }
 
 li {
-    padding: 20px 30px;
+    margin-right: 30px;
 }
 
 a:link {
@@ -23,13 +35,8 @@ a:visited {
 }
 
 h1 span {
-    color: black;
-    background-color: white;
-    margin-left: 70px;
-    padding: 0px 10px 1px 10px;
-    position: relative;
-    bottom: 20px;
-    border-radius: 5px;
+    color: white;
+    font-size: 50px;
 }
 
 body {
@@ -49,7 +56,8 @@ body {
     justify-content: space-between;
     width: 90%;
     color: white;
-    background-color: rgb(43, 12, 12);
+    background-image: url(../images/header.jpg);
+    background-size: cover;
     padding: 0px 15px;
 }
 
@@ -111,7 +119,7 @@ body {
 
 #newPost {
     color: white;
-    background-color: rgb(43, 12, 12);
+    background-image: url(../images/header.jpg);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -145,3 +153,49 @@ body {
     color: white;
     background-color: rgb(97, 97, 97);;
 }
+
+@media screen and (max-width: 1000px) {
+
+    h1 span {
+        font-size: 30px;
+    }
+
+    ul {
+        font-size: 15px;
+    }
+  
+  }
+
+  @media screen and (max-width: 710px) {
+
+    header {
+        height: 100px;
+    }
+
+    h1 span {
+        position: relative;
+        bottom: 5px;
+        font-size: 20px;
+    }
+
+    ul {
+        font-size: 10px;
+    }
+
+    li {
+        position: relative;
+        right: 15px;
+        margin-right: 10px;
+    }
+  
+  }
+
+  @media screen and (max-width: 455px) {
+
+    h1 span {
+        position: relative;
+        bottom: 5px;
+        font-size: 15px;
+    }
+  
+  }
