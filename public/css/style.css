@@ -197,5 +197,25 @@ body {
         bottom: 5px;
         font-size: 15px;
     }
+
+    .blogCard {
+        align-items: center;
+    }
+
+    .cardQuestion {
+        font-size: 13px;
+    }
+
+    .dashBlogCard {
+        align-items: center;
+    }
+  
+  }
+
+  @media screen and (max-width: 415px) {
+
+    ul {
+        font-size: 8px;
+    }
   
   }
