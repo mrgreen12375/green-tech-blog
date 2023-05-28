@@ -192,6 +192,10 @@ body {
 
   @media screen and (max-width: 455px) {
 
+    header {
+        height: 80px;
+    }
+
     h1 span {
         position: relative;
         bottom: 5px;
@@ -200,6 +204,10 @@ body {
 
     .blogCard {
         align-items: center;
+    }
+
+    .blogCard p {
+        font-size: 10px;
     }
 
     .cardQuestion {
