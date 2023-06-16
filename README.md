@@ -11,7 +11,21 @@ This project is to create a tech blog where a user can sign-up or login to a per
 - [Questions](#Questions)
 - [Diployment Links](#Questions)
 ## Mock-up
+
+Landing Page - Main Blog Thread
 ![alt tech blog demo](./public/images/blog-mockup.png)
+
+Comment Section - Click The Blog Title To Open
+![alt tech blog demo](./public/images/comment-mockup.png)
+
+My Dashboard - Login To Create, Update, And Delete Your Blogs
+![alt tech blog demo](./public/images/dashboard-mockup.png)
+
+Create Post - Click New Post And Fill Out New Post Form
+![alt tech blog demo](./public/images/create-mockup.png)
+
+Edit and Delete - Click Saved Post In Dashboard To Update Or Delete Post
+![alt tech blog demo](./public/images/edit-mockup.png)
 ## Installation
 dotenv
 
