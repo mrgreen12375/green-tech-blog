@@ -2,14 +2,14 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
   
-    const blogId = document.querySelector('#blogId').value;
+    const blog_id = document.querySelector('#blogId').value;
     const comment = document.querySelector('#comment').value;
   
     if (comment) {
       await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({
-          blogId,
+          blog_id,
           comment,
         }),
         headers: {

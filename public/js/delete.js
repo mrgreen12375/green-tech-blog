@@ -3,7 +3,7 @@ const deleteBlogHandler = async (event) => {
     const blogId = document.getElementById('blogId').value;
 
     fetch("/api/blog/" + blogId, {
-        method: "delete"
+        method: "DELETE"
     })
     .then(function() {
         document.location.replace("/dashboard");

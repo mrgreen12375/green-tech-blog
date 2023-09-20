@@ -16,28 +16,28 @@ router.get("/", (req, res) => {
 });
 
 
-router.get("/blog/:id", (req, res) => {
-  Blog.findByPk(req.params.id, {
-    include: [
-      User,
-      {
-        model: Comment,
-        include: [User],
-      },
-    ],
-  })
-    .then((blogData) => {
-      if (blogData) {
-        const post = blogData.get({ plain: true });
-
-        res.render("homepage", { post });
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch((err) => {
-      res.status(500).json(err);
+router.get('/blog/:id', async (req, res) => {
+  try {
+    const postData = await Blog.findByPk(req.params.id, {
+      include: [
+        User,
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
     });
+
+    if (postData) {
+      const post = postData.get({ plain: true });
+
+      res.render('homepage', { post });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get("/login", (req, res) => {
