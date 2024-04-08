@@ -48,7 +48,7 @@ Steven Green
 ## Questions
 GitHub Username: [mrgreen12375](https://github.com/mrgreen12375)
 
-Email Address: [ste2144105@gmail.com](ste2144105@gmail.com)
+Email Address: [sbgreen.dev@gmail.com](sbgreen.dev@gmail.com)
 ## Deployment Links
 Heroku: https://green-tech-blog.herokuapp.com/
 
